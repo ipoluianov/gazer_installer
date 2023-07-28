@@ -35,12 +35,18 @@ func GenerateInstallerFromDirectory(dirPath, outputPath string) error {
 	fmt.Fprintln(writer)
 
 	fmt.Fprintln(writer, "mkdir /usr/local/gazer/")
+	fmt.Fprintln(writer, "sudo /usr/local/gazer/gazer_node -stop")
+	fmt.Fprintln(writer, "sudo /usr/local/gazer/gazer_node -uninstall")
 
 	fmt.Fprintln(writer, "echo '"+encodedTarGzContent+"' | base64 -d | tar -xz -C /usr/local/gazer/")
 	fmt.Fprintln(writer)
 
 	fmt.Fprintln(writer, "chmod -R 755 /usr/local/gazer/")
 	fmt.Fprintln(writer, "find /usr/local/gazer/ -type f -exec chmod 644 {} +")
+	fmt.Fprintln(writer, "chmod 777 /usr/local/gazer/gazer_node")
+	fmt.Fprintln(writer, "chmod 777 /usr/local/gazer/gazer_client")
+	fmt.Fprintln(writer, "sudo /usr/local/gazer/gazer_node -install")
+	fmt.Fprintln(writer, "sudo /usr/local/gazer/gazer_node -start")
 	fmt.Fprintln(writer)
 
 	writer.Flush()
