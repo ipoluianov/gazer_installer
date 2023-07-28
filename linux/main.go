@@ -46,7 +46,7 @@ func main() {
 
 	fmt.Println("copy flutter application to bin")
 
-	err = tools.CopyDirectory("temp/gazer_client/build/windows/runner/Release/", "bin/")
+	err = tools.CopyDirectory("temp/gazer_client/build/linux/x64/release/bundle/", "bin/")
 	if err != nil {
 		fmt.Println("Error: ", err)
 		return
