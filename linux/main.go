@@ -52,6 +52,18 @@ func main() {
 		return
 	}
 
+	fmt.Println("writing desktop file ...")
+	desktopFileContent := `[Desktop Entry]
+	Encoding=UTF-8
+	Version=1.0
+	Type=Application
+	Terminal=false
+	Exec=/usr/local/gazer/gazer_client
+	Name=Gazer
+	Icon=/usr/local/gazer/icon.ico`
+
+	os.WriteFile("bin/gazer.desktop", []byte(desktopFileContent), 0666)
+
 	fmt.Println("creating distributive ...")
 
 	err = tools.GenerateInstallerFromDirectory("bin", "gazer_linux_setup.sh")
