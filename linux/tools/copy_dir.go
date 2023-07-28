@@ -29,7 +29,7 @@ func CopyDirectory(srcDirPath, dstDirPath string) error {
 				return err
 			}
 		} else {
-			if err := copyFile(srcPath, dstPath); err != nil {
+			if err := CopyFile(srcPath, dstPath); err != nil {
 				return err
 			}
 		}
@@ -64,7 +64,7 @@ func isDir(path string) bool {
 	return fileInfo.IsDir()
 }
 
-func copyFile(srcPath, dstPath string) error {
+func CopyFile(srcPath, dstPath string) error {
 	srcFile, err := os.Open(srcPath)
 	if err != nil {
 		return err

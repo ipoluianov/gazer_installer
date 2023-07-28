@@ -52,6 +52,12 @@ func main() {
 		return
 	}
 
+	err = tools.CopyFile("app_icon.ico", "bin/app_icon.ico")
+	if err != nil {
+		fmt.Println("Error: ", err)
+		return
+	}
+
 	fmt.Println("writing desktop file ...")
 	desktopFileContent := `[Desktop Entry]
 	Encoding=UTF-8
@@ -60,7 +66,7 @@ func main() {
 	Terminal=false
 	Exec=/usr/local/gazer/gazer_client
 	Name=Gazer
-	Icon=/usr/local/gazer/icon.ico`
+	Icon=/usr/local/gazer/app_icon.ico`
 
 	os.WriteFile("bin/gazer.desktop", []byte(desktopFileContent), 0666)
 
