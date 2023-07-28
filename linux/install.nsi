@@ -1,5 +1,5 @@
 !define PRODUCT_NAME "GazerNode"
-!define PRODUCT_VERSION "2.4.4"
+!define PRODUCT_VERSION "2.4.9"
 !define GAZER_NODE_EXE "gazer_node.exe"
 !define GAZER_CLIENT_EXE "gazer_client.exe"
 !define ARP "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
