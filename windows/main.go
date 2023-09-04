@@ -87,7 +87,7 @@ func main() {
 	}
 
 	fmt.Println("signing gazer_installer")
-	err = tools.Run("d:\\src\\codesign\\signtool.exe", "", []string{"sign", "/v", "/t", "http://timestamp.sectigo.com", "/f", "d:\\src\\codesign\\iip.pfx", "/p", passwd, "d:\\src\\github\\gazer_installer\\windows\\GazerNode_2.4.9.exe"})
+	err = tools.Run("d:\\src\\codesign\\signtool.exe", "", []string{"sign", "/v", "/t", "http://timestamp.sectigo.com", "/f", "d:\\src\\codesign\\iip.pfx", "/p", passwd, "d:\\src\\github\\gazer_installer\\windows\\GazerNode_2.4.13.exe"})
 	if err != nil {
 		fmt.Println("Error: ", err)
 		return
