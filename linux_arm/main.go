@@ -10,6 +10,9 @@ import (
 func main() {
 	version := "2.4.13"
 
+	os.Setenv("GOOS", "linux")
+	os.Setenv("GOARCH", "arm")
+
 	var err error
 	fmt.Println("Installer creation started ...")
 	os.RemoveAll("temp")
