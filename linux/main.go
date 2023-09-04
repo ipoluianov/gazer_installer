@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+	version := "2.4.13"
+
 	var err error
 	fmt.Println("Installer creation started ...")
 	os.RemoveAll("temp")
@@ -72,7 +74,7 @@ func main() {
 
 	fmt.Println("creating distributive ...")
 
-	err = tools.GenerateInstallerFromDirectory("bin", "gazer_linux_setup.sh")
+	err = tools.GenerateInstallerFromDirectory("bin", "gazer_linux_"+version+"_setup.sh")
 	if err != nil {
 		fmt.Println("Error: ", err)
 		return
