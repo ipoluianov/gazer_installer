@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	version := "2.4.15"
+	version := "2.4.16"
 
 	os.Setenv("GOOS", "linux")
 	os.Setenv("GOARCH", "arm")
