@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	version := "2.4.18"
+	version := "2.4.19"
 
 	var err error
 	fmt.Println("Installer creation started ...")
